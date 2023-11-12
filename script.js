@@ -86,6 +86,26 @@ function existeTamanoDePizza(datos) {
 
 // AE-2 AJAX
 
+/**
+ * Realiza una llamada AJAX al servidor para recuperar los siguientes datos de la pizzería:
+ * - ingredientes
+ * - tamaños
+ *
+ * En caso de error, alertamos al usuario de que ha ocurrido un error.
+ *
+ * @param {Function} onLoad Función callback que se ejecutará en caso la petición devuelva una respuesta válida,
+ *               dicho callback debe recibir un parametro, que sería el JSON que devuelve el servidor.
+ *
+ * @example
+ *
+ * // nuestro callback que será invocado despues
+ * function miCallback(respuestaJSONDelServidor) {
+ *   console.log(`El servidor ha respondido con: ${respuestaJSONDelServidor}`);
+ * }
+ *
+ * obtenerDatosDeIngredientesTamanos(miCallback);
+ *
+ */
 function obtenerDatosDeIngredientesTamanos(onLoad) {
     const request = new XMLHttpRequest();
     request.open("GET", SERVER_URL + API, true);
@@ -159,6 +179,9 @@ function popularIngredientesPizza(ingredientesPizza) {
 }
 
 function calcularTotalPedidoAJAX(datosFormulario) {
+    // Invocamos la función para que realice la petición AJAX
+    // y pasamos el callback a ejecutar una vez tengamos la
+    // información necesario del servidor
     obtenerDatosDeIngredientesTamanos(function (jsonResponse) {
         calcularTotalPedido(datosFormulario, jsonResponse);
     });
