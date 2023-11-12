@@ -1,0 +1,41 @@
+{
+    "ingredientes": [
+        {
+            "nombre": "Pepperoni",
+            "value": "pepperoni",
+            "precio": 1.25
+        },
+        {
+            "nombre": "Champiñones",
+            "value": "champi",
+            "precio": 1.55
+        },
+        {
+            "nombre": "Queso Mozzarella",
+            "value": "queso",
+            "precio": 1.65
+        },
+        {
+            "nombre": "Jamón",
+            "value": "jamon",
+            "precio": 1
+        }
+    ],
+    "tamanosPizza": [
+        {
+            "nombre": "Pequeña",
+            "value": "pequena",
+            "precio": 5
+        },
+        {
+            "nombre": "Mediana",
+            "value": "mediana",
+            "precio": 10
+        },
+        {
+            "nombre": "Grande",
+            "value": "grande",
+            "precio": 15
+        }
+    ]
+}

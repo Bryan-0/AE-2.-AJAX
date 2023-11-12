@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AE-2 AJAX</title>
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./script.js" defer></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex items-center justify-center h-screen p-2 sm:p-0">
+        <div
+            id="pedidoRealizado"
+            class="sm:border sm:border-orange-500 shadow-md rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 p-6 hidden"
+        >
+            <div class="flex flex-col gap-2">
+                <h1 class="text-xl font-bold">¡Pedido realizado con éxito!</h1>
+                <img
+                    class="self-center my-2"
+                    width="80"
+                    src="https://static.vecteezy.com/system/resources/previews/023/254/088/original/kawaii-pizza-slice-illustration-cute-happy-fast-food-character-icon-mascot-drawing-adorable-cartoon-for-card-textile-print-kids-menu-stickers-free-png.png"
+                />
+                <p class="text-sm text-gray-600 font-bold">
+                    Orden No. 349102345
+                </p>
+                <p class="text-lg">
+                    <span class="text-lg text-gray-800">Total: </span>
+                    <span
+                        class="font-bold text-green-700"
+                        id="totalPedido"
+                    ></span>
+                </p>
+                <button
+                    class="bg-orange-600 text-white rounded-md px-4 py-2 cursor-pointer hover:bg-orange-500 mt-4"
+                    id="btnNuevoPedido"
+                >
+                    Nuevo pedido
+                </button>
+            </div>
+        </div>
+        <main
+            class="sm:border sm:border-orange-500 shadow-md p-4 sm:p-8 relative"
+        >
+            <h1 class="text-2xl">¡Pide tu Pizza!</h1>
+            <div
+                id="mensajeContenedor"
+                class="w-full rounded-md shadow-sm font-bold bg-red-100 p-1 mt-4 hidden"
+            >
+                <span id="mensajeAlerta"></span>
+            </div>
+            <form
+                method="post"
+                action="#"
+                class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 relative"
+            >
+                <div class="absolute w-16 -top-20 -right-4">
+                    <img src="./pizza.png" alt="Smiling pizza logo" />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        class="border border-red-300 rounded-md focus:outline-none focus:ring focus:ring-red-200 px-2 py-1"
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                    />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="direccion">Dirección</label>
+                    <input
+                        class="border border-red-300 rounded-md focus:outline-none focus:ring focus:ring-red-200 px-2 py-1"
+                        id="direccion"
+                        name="direccion"
+                        type="text"
+                    />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="telefono">Teléfono</label>
+                    <input
+                        class="border border-red-300 rounded-md focus:outline-none focus:ring focus:ring-red-200 px-2 py-1"
+                        id="telefono"
+                        name="telefono"
+                        type="number"
+                    />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="email">Email</label>
+                    <input
+                        class="border border-red-300 rounded-md focus:outline-none focus:ring focus:ring-red-200 px-2 py-1"
+                        id="email"
+                        name="email"
+                        type="email"
+                    />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label>Tamaño</label>
+                    <div
+                        class="flex gap-1.5 flex-wrap"
+                        id="tamanos-contenedor"
+                    ></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label>Ingredientes</label>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2"
+                        id="ingredientes-contenedor"
+                    ></div>
+                </div>
+                <div class="col-span-1 sm:col-span-2 text-center mt-2">
+                    <input
+                        class="bg-orange-600 text-white rounded-md px-4 py-2 cursor-pointer hover:bg-orange-500"
+                        type="submit"
+                        value="Enviar Pedido"
+                    />
+                </div>
+                <div class="col-span-1 sm:col-span-2 text-center mt-2">
+                    <button
+                        class="bg-blue-500 text-white rounded-md px-4 py-2 cursor-pointer hover:bg-blue-400"
+                        id="refrescar-btn"
+                        type="button"
+                    >
+                        Refrescar Datos
+                    </button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
